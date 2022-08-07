@@ -1,0 +1,11 @@
+---
+- name: install Java
+  hosts: all
+  become: true
+  tasks:
+    - name: Install java
+      ansible.builtin.apt:
+        name:
+          - default-jre
+        state: latest
+        update_cache: true
